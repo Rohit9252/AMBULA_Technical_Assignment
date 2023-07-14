@@ -34,6 +34,14 @@ public interface UserLocationService {
      */
     public List<UserLocation> getUsersLocations(int n );
 
+    /**
+     * Retrieves a list of all user locations from the database.
+     *
+     * @return a list of user locations
+     */
+    public List<UserLocation> getAllUsersLocations();
+
+
 
 
 

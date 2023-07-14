@@ -54,7 +54,7 @@ public class UserConfig {
                     auth.requestMatchers("/","/api/signup","/h2-console/**", "/api/login","/api/test/all", "/api/getUser").permitAll()
                             .requestMatchers("/api/test/user").hasAnyAuthority("READER")
                             .requestMatchers("/api/test/admin", "/api/create_data", "/api/update_data/**").hasAnyAuthority("ADMIN")
-                            .requestMatchers(("/api/get_users/**")).hasAnyAuthority("ADMIN", "READER")
+                            .requestMatchers(("/api/get_users/**"), ("/api/get_users")).hasAnyAuthority("ADMIN", "READER")
                             .anyRequest().authenticated();
                 }).cors().and().csrf().disable();
         http.authenticationProvider(daoAuthenticationProvider());

@@ -66,6 +66,15 @@ public class UserLocationController {
     }
 
 
+    @GetMapping("/get_users")
+    @PreAuthorize("hasRole ('ADMIN', 'READER')" )
+    public ResponseEntity<List<UserLocation>> getAllNUser(){
+
+        return new ResponseEntity<>(userLocationService.getAllUsersLocations(), HttpStatus.OK);
+
+    }
+
+
 
 
 

@@ -79,6 +79,16 @@ public class UserLocationServiceImpl implements UserLocationService{
         return allUserLocations.subList(0, Math.min(n, allUserLocations.size()));
 
     }
+    /**
+     * Retrieves a list of all user locations from the database.
+     *
+     * @return a list of user locations
+     */
+    @Override
+    public List<UserLocation> getAllUsersLocations() {
+
+            return userLocationRepository.findAll();
+    }
 
 
     private double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
